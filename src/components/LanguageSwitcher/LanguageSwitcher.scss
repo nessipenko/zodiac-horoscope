@@ -5,7 +5,7 @@
     z-index: 1000;
 
     select {
-        min-width: 90px;
+        width: 90px;
         min-height: 35px;
         background-color: #2a5298;
         color: #ffffff;
@@ -32,7 +32,7 @@
         content: '▼';
         position: absolute;
         top: 50%;
-        right: 10px;
+        right: 15px;
         transform: translateY(-50%);
         pointer-events: none;
         font-size: 8px;
