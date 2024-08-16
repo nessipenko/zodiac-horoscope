@@ -12,12 +12,13 @@ Zodiac Horoscope Miniapp - это мини-приложение для Telegram,
 # Установка и запуск
 ## Клонирование репозитория
 git clone https://github.com/nessipenko/zodiac-horoscope
+
 cd tg-horoscope
 
 ##  Установка зависимостей
-### `npm install`
+## `npm install`
 
 ## Запуск в режиме разработки
-### `npm start`
+## `npm start`
 
 
