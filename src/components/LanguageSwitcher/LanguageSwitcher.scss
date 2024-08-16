@@ -1,0 +1,61 @@
+.language-switcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+
+    select {
+        min-width: 85px;
+        min-height: 35px;
+        background-color: #2a5298;
+        color: #ffffff;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        appearance: none;
+        outline: none;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #1e3c72;
+        }
+
+        &:focus {
+            background-color: #1e3c72;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    &::after {
+        content: '▼';
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        pointer-events: none;
+        font-size: 8px;
+        color: #ffffff;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .language-switcher select {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .language-switcher {
+        right: 10px;
+
+        select {
+            width: 70px;
+            padding: 6px 10px;
+            font-size: 10px;
+        }
+    }
+}

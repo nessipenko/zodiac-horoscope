@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense, useState } from 'react';
+import LanguageSwitcher from './components/LanguageSwitcher/LanguageSwitcher';
+import ZodiacDetail from './components/ZodiacDetail/ZodiacDetail';
+import ZodiacList from './components/ZodiacList/ZodiacList';
 
-function App() {
+const App = () => {
+  const [selectedZodiac, setSelectedZodiac] = useState(null);
+
+  const handleSelect = (sign, icon) => {
+    setSelectedZodiac({ sign, icon });
+  };
+
+  const handleBack = () => {
+    setSelectedZodiac(null);
+  };
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <LanguageSwitcher />
+      <Suspense fallback={<div>Loading...</div>}>
+        {selectedZodiac ? (
+          <ZodiacDetail
+            sign={selectedZodiac.sign}
+            icon={selectedZodiac.icon}
+            onBack={handleBack}
+          />
+        ) : (
+          <ZodiacList onSelect={handleSelect} />
+        )}
+      </Suspense>
+
     </div>
   );
-}
+};
 
 export default App;
